@@ -1019,7 +1019,7 @@ header label {
   margin: 0;
 }
 .post-tags {
-  padding: 1rem 0 1rem;
+  padding: 4rem 0 1rem;
   display: flex;
   justify-content: space-around;
 }
@@ -1367,4 +1367,9 @@ header label {
   text-align: center;
   line-height: 1.5rem;
   padding-top: 2em;
+}
+.footer .post-tags {
+  padding: 4rem 0 1rem;
+  display: flex;
+  justify-content: space-between;
 }

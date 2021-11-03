@@ -5,3 +5,8 @@
   line-height: 1.5rem;
   padding-top: 2em;
 }
+.footer .post-tags {
+  padding: 4rem 0 1rem;
+  display: flex;
+  justify-content: space-between;
+}
