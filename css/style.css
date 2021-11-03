@@ -243,7 +243,7 @@ a:hover {
   height: 4rem;
   width: 100%;
   text-align: center;
-  line-height: 4rem;
+  line-height: 1.5rem;
   padding-top: 2em;
 }
 @charset "utf-8";
@@ -923,7 +923,7 @@ header label {
   text-align: right;
 }
 .post-copyright {
-  margin-top: 5rem;
+  margin-top: 2rem;
   border-top: 1px solid #e8e8e8;
   border-bottom: 1px solid #e8e8e8;
 }
@@ -1021,7 +1021,7 @@ header label {
 .post-tags {
   padding: 1rem 0 1rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .post-nav:before,
 .post-nav:after {
