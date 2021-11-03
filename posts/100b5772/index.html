@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="Kaqiup">
+
+
+
+
+
+<title>惠普暗影精灵5黑苹果安装教程 | Kaq&#39;s Blog</title>
+
+
+
+    <link rel="icon" href="http://img.nikooo.site/NIKOOO.png">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Kaq&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Home</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" target="_blank" rel="noopener" href="https://www.nikooo.site">Community</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Kaq&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Home</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" target="_blank" rel="noopener" href="https://www.nikooo.site">Community</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">惠普暗影精灵5黑苹果安装教程</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">Kaqiup</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">April 22, 2021&nbsp;&nbsp;13:53:49</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/">系统安装</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h2 id=""><a href="#" class="headerlink" title=""></a></h2><span id="more"></span> 
+
+<blockquote>
+<p>说明：</p>
+<p>由于引导文件和相关资源更新迅猛，文中的信息可能没法及时更新，参考这篇文章时还请注意所用的引导文件和系统版本号是否匹配，以及工具或配置方法是否得当，如果因为错误操作造成了某种程度的损失，<strong>本人概不负责</strong>，请知悉！</p>
+</blockquote>
+<p>在爬了很多教程贴之后，整体思路并不完整，拼拼凑凑的去理解也很累。很多教程写的很好，但是有些简单的步骤就直接省略了，然而，那些就是会卡住小白的步骤，所以还是打算自己写一次装机的经历。</p>
+<h3 id="暗影5的配置总览"><a href="#暗影5的配置总览" class="headerlink" title="暗影5的配置总览"></a>暗影5的配置总览</h3><table>
+<thead>
+<tr>
+<th>硬件名称</th>
+<th>属性</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>CPU</td>
+<td>i7-9750H</td>
+</tr>
+<tr>
+<td>iGPU</td>
+<td>Intel UHD Graphics 630</td>
+</tr>
+<tr>
+<td>dGPU</td>
+<td>GTX1650</td>
+</tr>
+<tr>
+<td>Audio</td>
+<td>Realtek ALC295</td>
+</tr>
+<tr>
+<td>Disk</td>
+<td>三星MZVLB512HAJQ-000H1 512GB/固态 + WDC WDS500G2B0A-00SM50/512GB固态</td>
+</tr>
+<tr>
+<td>Wireless</td>
+<td>英特尔Wireless-AC 9560</td>
+</tr>
+<tr>
+<td>Ethernet</td>
+<td>Realtek 8111/8168/8411 PCI Express Gigabit Etherne</td>
+</tr>
+</tbody></table>
+<h4 id="硬件支持"><a href="#硬件支持" class="headerlink" title="硬件支持"></a>硬件支持</h4><ul>
+<li>在使用<code>macOS</code>之前，需要先了解下硬件都有哪些限制，也就是哪些硬件是被支持的，哪些是不被支持的。硬件限制相关可以参考<a target="_blank" rel="noopener" href="https://dortania.github.io/OpenCore-Install-Guide/macos-limits.html#cpu-support">OpenCore Install Guide</a>。</li>
+<li>固态<ul>
+<li>可以参考<a target="_blank" rel="noopener" href="http://k61.org/dac855c6.html">【老吴黑苹果】2021台式机黑苹果完美电脑配置推荐，适用安装黑苹果系统的组装机配置表</a></li>
+</ul>
+</li>
+</ul>
+<h4 id="我的考虑"><a href="#我的考虑" class="headerlink" title="我的考虑"></a>我的考虑</h4><p>在了解了我的电脑自带固态是PM981，我很悲伤，在基于PM981还是加多一个SATA固态的两者性价比衡量下，我选择了买多一个SATA3.0的固态，因为如果把PM981换下来，我的资料需要转移不说，只为了装macos系统，平白无故闲置一张固态实在是可惜，所以我通过<a target="_blank" rel="noopener" href="http://k61.org/diable-pm981-on-hackintosh.html">硬件屏蔽</a>的方法，将PM981屏蔽掉，在新买的西数固态上安装黑苹果。</p>
+<h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><h4 id="查找适合自己的EFI"><a href="#查找适合自己的EFI" class="headerlink" title="查找适合自己的EFI"></a>查找适合自己的EFI</h4><ul>
+<li>关注黑果小兵部落阁的<a target="_blank" rel="noopener" href="https://blog.daliansky.net/Hackintosh-long-term-maintenance-model-checklist.html">Hackintosh黑苹果长期维护机型整理清单</a>，在上边查找自己的机型时候有案例或教程</li>
+<li>或者在github上以关键词的方式搜索是否有支持类型，例如<code>暗影精灵5+EFI</code>，我这电脑EFI就是这样找的</li>
+</ul>
+<blockquote>
+<p>Tips：</p>
+<p>如果上边两个方式都没找到合适的EFI，可以考虑自己制作，这是<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1kK4y1S74C/?spm_id_from=333.788.b_636f6d6d656e74.6">教程</a>，挺有用的，反正我看完后思路就有了。当然如果你是台式机并且想要自己制作引导，可以参考<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV18V41187JZ?from=search&seid=7248382395549514839">这个</a>。</p>
+</blockquote>
+<h4 id="安装macOS的基本要求"><a href="#安装macOS的基本要求" class="headerlink" title="安装macOS的基本要求"></a>安装macOS的基本要求</h4><blockquote>
+<p>Tips：</p>
+<ul>
+<li>你需要明确实在同一硬盘安装win+macOS，还是在单独的一块硬盘安装macOS并且在装了Win的另一块硬盘进行opencore引导，这会影响你是如何添加引导进硬盘。</li>
+<li>基于我的情况，我选择单独在一块固态上安装Big Sur，能有较好的数据隔离作用。</li>
+</ul>
+</blockquote>
+<ul>
+<li>一个装了Windows系统的硬盘</li>
+<li>一个单独安装macOS Big Sur的硬盘</li>
+<li>一个 8GB 或以上的 U 盘和一个 USB 鼠标和USB键盘</li>
+<li>注意数据备份</li>
+</ul>
+<h4 id="需要下载的东西"><a href="#需要下载的东西" class="headerlink" title="需要下载的东西"></a>需要下载的东西</h4><blockquote>
+<p>Tips: </p>
+<ul>
+<li>为了避免未知的麻烦，我在找到合适暗影5的EFI基础上，下载了成功案例对应的OC引导的版本和相应的系统镜像，如果你和我一样用的是暗影5，而且配置相当，下边的链接应该能帮到你。以下内容全部是基于有现成的EFI文件进行。</li>
+<li>这里用的OpenCore版本是0.6.3，目前最新的已经是0.6.8了，待装好系统并且备份好后再考虑升级opencore版本了</li>
+</ul>
+</blockquote>
+<ul>
+<li><p>OpenCore引导下载，下方链接二选一【OpenCore version: 0.6.3】</p>
+<ul>
+<li><a href="(https://github.com/hibobmaster/HP-15-dc1010nr-hackintosh/tree/main/Big%20Sur)">原下载链接</a></li>
+<li>如果下载速度缓慢，可以参考<a target="_blank" rel="noopener" href="https://blog.hibobmaster.com/hp-15-dc1010nr-hackintosh/">暗影精灵5之OpenCore引导黑苹果</a>提供的国内加速<a target="_blank" rel="noopener" href="https://down.sky-and-poem.fun/source/static/HP-15-dc1010nr-hackintosh-main.zip">下载链接</a></li>
+</ul>
+</li>
+<li><p>系统镜像</p>
+<ul>
+<li><p>基于有现成的EFI，这里只下载了带CLOVER和PE分区的镜像：</p>
+<ul>
+<li>黑果小兵的<a target="_blank" rel="noopener" href="https://blog.daliansky.net/macOS-BigSur-11.0.1-20B29-Release-version-with-Clover-5126-original-image-Double-EFI-Version-UEFI-and-MBR.html">macOS BigSur 11.0.1 20B50 正式版 with Clover 5126原版镜像[双EFI版][UEFI and MBR]</a></li>
+</ul>
+<blockquote>
+<p>Tips: 如果需要带OC引导的，可以在微信公众号<code>黑果小兵的部落阁</code>里，用手机查看<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/WEp1F4nknCgw9K6NaqEP6g">这篇文章</a>，通过打赏作者获得自动推送的镜像下载链接。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>安装前后要用到的软件：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.balena.io/etcher/">balenaEtecher</a> </li>
+<li><a target="_blank" rel="noopener" href="http://www.diskgenius.cn/">DiskGenius 硬盘分区维护工具</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.smzy.com/smzy/down416541.html">Hasleo EasyUEFI</a> </li>
+</ul>
+</li>
+</ul>
+<h3 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h3><blockquote>
+<p>OC版本：OpenCore version:0.6.3</p>
+<p>系统镜像: macOS Big Sur 11.0.1 20B50 Installer for CLOVER 5126 and OpenCore 0.6.3 and PE三EFI分区原版镜像</p>
+</blockquote>
+<h4 id="U盘制作"><a href="#U盘制作" class="headerlink" title="U盘制作"></a>U盘制作</h4><p>用下载好的<a target="_blank" rel="noopener" href="https://etcher.io/">etcher</a>，打开镜像，选择U盘，点击Flash即可。<strong>Windows10需要以管理员权限运行</strong></p>
+<p><img src="https://images.daliansky.net/d/YmBXVA8q/blog/etcher.png?download=1" alt="Etcher"></p>
+<h4 id="替换EFI"><a href="#替换EFI" class="headerlink" title="替换EFI"></a>替换EFI</h4><blockquote>
+<p>Tips:</p>
+<ul>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/hibobmaster/HP-15-dc1010nr-hackintosh">暗影5的成功案例</a>有提醒，要在安装macOS前替换OC文件，否则会出现<code>Stuck on OCB: LoadImage failed - Security Violation</code>的错误。</p>
+</li>
+<li><p>以下基于带Opencore/clover/pe三分区的版本</p>
+</li>
+</ul>
+</blockquote>
+<ol>
+<li>打开DiskGenius</li>
+<li>删除U盘里EFI目录下的所有文件</li>
+<li>将OC目录下BOOT和OC文件copy到EFI分区下</li>
+<li>将OC分区删除</li>
+<li>最终只保留OC分区和必要的PE分区（方便出现问题进行修复）</li>
+</ol>
+<p><img src="https://img.imgdb.cn/item/608103fd563420b6475a7819.png" alt="image-20210422130417643"></p>
+<p>到这里U盘的操作告一段落</p>
+<h4 id="硬盘分区"><a href="#硬盘分区" class="headerlink" title="硬盘分区"></a>硬盘分区</h4><blockquote>
+<p>在进行安装前，在Win下将要安装macOS的目标磁盘分区</p>
+</blockquote>
+<ol>
+<li><p>借助DiskGenius</p>
+</li>
+<li><p>过程过程如下</p>
+</li>
+</ol>
+<p><img src="https://img.imgdb.cn/item/60806c8499525621145917bf.png"></p>
+<ol start="3">
+<li>设置完，重启修改BIOS启动项，可以插上U盘直接怼。</li>
+</ol>
+<blockquote>
+<p>Tips: 箭头4需要创建一个ESP分区，分区大小&gt;=300M，可以不要MSR分区，我这里应该搞错了。</p>
+</blockquote>
+<h4 id="设置BIOS及开始安装镜像"><a href="#设置BIOS及开始安装镜像" class="headerlink" title="设置BIOS及开始安装镜像"></a>设置BIOS及开始安装镜像</h4><blockquote>
+<p>基于暗影5的情况，其他机型这里不考虑，开机按F10进BIOS</p>
+</blockquote>
+<ol>
+<li><p>设置成中文，方便查看</p>
+</li>
+<li><p><img src="https://img.imgdb.cn/item/60806dfe995256211460b4fb.png" alt="image-20210422022440697"></p>
+</li>
+<li><p><img src="https://img.imgdb.cn/item/60806e67995256211462f976.png" alt="image-20210422022636837"></p>
+</li>
+<li><p>操作系统的启动管理员 &gt; 按回车</p>
+</li>
+<li><p>选择U盘启动</p>
+</li>
+<li><p>F10保存退出</p>
+</li>
+<li><p>重启后按F9进入opencore引导界面</p>
+</li>
+<li><p>选择Install Big Sur</p>
+</li>
+<li><p>磁盘分区</p>
+<ol>
+<li>将整个目标硬盘抹除</li>
+<li>安装macOS</li>
+</ol>
+</li>
+</ol>
+<p>整个过程十分舒畅，没有卡在哪个位置，期间出现的几次重启是安装进程中正常重启，由于还没有把EFI添加进硬盘进行引导，期间出现的重启如果没按F9重新引导进opencore界面，会直接回到win启动进程，如果出现了这种情况，重启，按F9。详细的安装过程可以参考<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/le34oz5sGfydJ12v6V0S-g">这篇文章</a>。</p>
+<h4 id="-1"><a href="#-1" class="headerlink" title=""></a><img src="https://img.imgdb.cn/item/60810848563420b647871a60.png" alt="image-20210422131958399"></h4><p><img src="https://img.imgdb.cn/item/60810848563420b647871a71.png" alt="image-20210422132218889"></p>
+<p><img src="https://img.imgdb.cn/item/60810848563420b647871a83.png" alt="image-20210422132233619"></p>
+<p><img src="https://img.imgdb.cn/item/60810848563420b647871a93.png" alt="image-20210422132239786"></p>
+<p><img src="https://img.imgdb.cn/item/60810848563420b647871abe.png" alt="image-20210422132245554"></p>
+<p>到这一步也差不多了，但还有一些工作要做，</p>
+<ul>
+<li><p>由于有PM981的缘故，安装完成进入系统后首先屏蔽<a target="_blank" rel="noopener" href="http://k61.org/diable-pm981-on-hackintosh.html">PM981</a></p>
+</li>
+<li><p>重建缓存，参考<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/qSwtuO7K4TqP4hq4yEhG_A">Big Sur安装教程 Part 2</a>里部分内容。</p>
+<ul>
+<li><p>先打开终端，输入几行命令：</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo spctl --master-disable		<span class="comment"># 启用macOS安装应用允许任何来源</span></span><br><span class="line">sudo kextcache -i /				<span class="comment"># 重建缓存</span></span><br></pre></td></tr></table></figure></li>
+<li><p>如果出于某些原因，在<code>/System/Library/Extensions/</code>或者<code>/Library/Extensions/</code>修改了某些驱动，请使用以下命令重建缓存：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo chown -R root:wheel /System/Library/Extensions/</span><br><span class="line">sudo chmod -R 755 /System/Library/Extensions/</span><br><span class="line">sudo kmutil install --update-all</span><br><span class="line">sudo kcditto</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<h4 id="设置硬盘引导"><a href="#设置硬盘引导" class="headerlink" title="设置硬盘引导"></a>设置硬盘引导</h4><blockquote>
+<p>之前一直是U盘引导，现在脱离U盘，在硬盘进行引导。</p>
+</blockquote>
+<ol>
+<li>用DiskGenius将U盘的EFI目录下BOOT和OC文件复制到Windows所在盘的EFI文件下</li>
+<li><img src="https://img.imgdb.cn/item/6080713699525621146fce2a.png" alt="image-20210422023834308"></li>
+<li>打开EasyUEFI，把opencore的顺序调到第一位</li>
+</ol>
+<p>到这里整个过程就完成了，重启后会进入OC引导界面，整个过程包括写这篇花了好长时间（致敬那些原创的教程作者，真的很不容易！！），这可能也是以前很不喜欢做笔记的原因。但如果不记录下来，之后如果还想重新接触，就发现忘的差不多了。而在做记录的过程中，也在不断强化记忆，反正现在闭着眼睛都知道整个过程要怎么搞了（除了自己配置OC哈哈）</p>
+<h3 id="后话"><a href="#后话" class="headerlink" title="后话"></a>后话</h3><ul>
+<li>建议在系统安装完后，并且能正常用，可以回到Windows，用<code>Paragon Hard Disk Manager™ </code>将整个系统打包，存在某处，以便之后系统出了问题，快速恢复。教程网上很容易找，这里就不推了（懒）。</li>
+<li>唉，还是建议还是换掉PM981，否则用起来还是像旁边有个炸弹，不知道什么时候会出现<code>内核崩溃</code>的惨状，开机不挂载的方法也不知道是否有效果的。</li>
+</ul>
+<h3 id="参考和引用"><a href="#参考和引用" class="headerlink" title="参考和引用"></a>参考和引用</h3><p><a target="_blank" rel="noopener" href="https://dortania.github.io/OpenCore-Install-Guide/macos-limits.html#cpu-support">https://dortania.github.io/OpenCore-Install-Guide/macos-limits.html#cpu-support</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.daliansky.net/">https://blog.daliansky.net/</a></p>
+<p><a target="_blank" rel="noopener" href="https://hackintosh.kirainmoe.com/">https://hackintosh.kirainmoe.com/</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.cpuid.com/softwares/cpu-z.html">https://www.cpuid.com/softwares/cpu-z.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.daliansky.net/OpenCore-BootLoader.html">https://blog.daliansky.net/OpenCore-BootLoader.html</a></p>
+<p><a target="_blank" rel="noopener" href="http://k61.org/dac855c6.html">http://k61.org/dac855c6.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/hibobmaster/HP-15-dc1010nr-hackintosh/tree/main/Big%20Sur">https://github.com/hibobmaster/HP-15-dc1010nr-hackintosh/tree/main/Big%20Sur</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.hibobmaster.com/hp-15-dc1010nr-hackintosh/">https://blog.hibobmaster.com/hp-15-dc1010nr-hackintosh/</a></p>
+<p><a target="_blank" rel="noopener" href="https://down.sky-and-poem.fun/source/static/HP-15-dc1010nr-hackintosh-main.zip">https://down.sky-and-poem.fun/source/static/HP-15-dc1010nr-hackintosh-main.zip</a></p>
+<p><a target="_blank" rel="noopener" href="https://etcher.io/">https://etcher.io</a></p>
+<p><a target="_blank" rel="noopener" href="http://k61.org/diable-pm981-on-hackintosh.html">http://k61.org/diable-pm981-on-hackintosh.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/qSwtuO7K4TqP4hq4yEhG_A">https://mp.weixin.qq.com/s/qSwtuO7K4TqP4hq4yEhG_A</a></p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>Kaqiup</span>
+                    </p>
+                
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>© 2021 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/MACOS/"># MACOS</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/posts/c8cc8a0b/">记录一次新硬盘迁移系统的经历</a>
+            
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© Kaqiup | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>

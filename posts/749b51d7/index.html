@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="Kaqiup">
+
+
+
+
+
+<title>树莓派开箱后做的事 | Kaq&#39;s Blog</title>
+
+
+
+    <link rel="icon" href="http://img.nikooo.site/NIKOOO.png">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Kaq&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Home</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" target="_blank" rel="noopener" href="https://www.nikooo.site">Community</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Kaq&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Home</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" target="_blank" rel="noopener" href="https://www.nikooo.site">Community</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">树莓派开箱后做的事</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">Kaqiup</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">September 1, 2021&nbsp;&nbsp;12:59:04</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h2 id=""><a href="#" class="headerlink" title=""></a></h2><span id="more"></span> 
+
+<blockquote>
+<p>最近入手了个树莓派4B的板子，在这个帖子下记录玩耍的经历。  </p>
+</blockquote>
+<!-- more -->
+<h4 id="常用工具集"><a href="#常用工具集" class="headerlink" title="常用工具集"></a>常用工具集</h4><ul>
+<li>在专题另外一篇文章中能找到相关下载的链接，需要请移步。</li>
+</ul>
+<h4 id="系统版本（带桌面环境和不带桌面环境）"><a href="#系统版本（带桌面环境和不带桌面环境）" class="headerlink" title="系统版本（带桌面环境和不带桌面环境）"></a>系统版本（带桌面环境和不带桌面环境）</h4><ul>
+<li>此篇文章记录没带桌面配置树莓派的初始化相关事情。</li>
+</ul>
+<h4 id="烧写系统"><a href="#烧写系统" class="headerlink" title="烧写系统"></a>烧写系统</h4><ul>
+<li>通过官方的镜像烧录软件Raspberry Pi Imager插卡烧写。</li>
+<li>通过balenaEtcher将下载好的系统镜像烧写进SD卡。</li>
+</ul>
+<h4 id="创建ssh空文件"><a href="#创建ssh空文件" class="headerlink" title="创建ssh空文件"></a>创建ssh空文件</h4><ul>
+<li>在system-boot目录下创建ssh空文件，完成后把SD卡插入树莓派，插上网线和电源开机。</li>
+</ul>
+<h4 id="树莓派的IP地址"><a href="#树莓派的IP地址" class="headerlink" title="树莓派的IP地址"></a>树莓派的IP地址</h4><ul>
+<li>通过局域网ip扫描软件或路由器管理界面，找到树莓派当前的IP，记录下来。</li>
+</ul>
+<h4 id="登陆FinalShell"><a href="#登陆FinalShell" class="headerlink" title="登陆FinalShell"></a>登陆FinalShell</h4><blockquote>
+<p>备注：</p>
+<ul>
+<li><p>之所以使用Finalshell这个软件，是因为它太好用了，当然如果你习惯使用Xshell也是可以的。</p>
+</li>
+<li><p>首次使用需要在FinalShell官网注册账号，使用说明将另外开篇描述，这里就不展开了。</p>
+</li>
+</ul>
+</blockquote>
+<h4 id="SSH登陆成功后"><a href="#SSH登陆成功后" class="headerlink" title="SSH登陆成功后"></a>SSH登陆成功后</h4><h4 id="命令行界面"><a href="#命令行界面" class="headerlink" title="命令行界面"></a>命令行界面</h4><h6 id="修改root密码"><a href="#修改root密码" class="headerlink" title="修改root密码"></a>修改root密码</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo passwd root //修改root密码</span><br></pre></td></tr></table></figure>
+
+<h6 id="授权ssh远程登陆root权限"><a href="#授权ssh远程登陆root权限" class="headerlink" title="授权ssh远程登陆root权限"></a>授权ssh远程登陆root权限</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano /etc/ssh/sshd_config //编辑sshd_config文件</span><br></pre></td></tr></table></figure>
+
+<p>将其中PermitRootLogin对应行，改为</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PermitRootLogin yes</span><br></pre></td></tr></table></figure>
+
+<p>Ctrl + O 保存， 回车（确认文件名），Ctrl + X退出编辑</p>
+<h6 id="重启ssh："><a href="#重启ssh：" class="headerlink" title="重启ssh："></a>重启ssh：</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl restart ssh</span><br></pre></td></tr></table></figure>
+
+
+
+<p>在FinalShell中设置以root账户登陆，之后操作就不需要在命令行首加-sudo了。</p>
+<h5 id="修改软件源"><a href="#修改软件源" class="headerlink" title="修改软件源"></a>修改软件源</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nano /etc/apt/sources.list</span><br></pre></td></tr></table></figure>
+
+<p>这里用了<a target="_blank" rel="noopener" href="http://mirrors.ustc.edu.cn/help/raspbian.html">中科大的raspbian镜像源</a>，需要的可以先备份原镜像源文件，我这里选择注释掉了。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">deb http://mirrors.ustc.edu.cn/raspbian/raspbian/ buster main contrib non-free rpi</span><br><span class="line"><span class="comment"># deb-src http://mirrors.ustc.edu.cn/raspbian/raspbian/ buster main contrib non-free rpi</span></span><br></pre></td></tr></table></figure>
+
+<p>Ctrl + O 保存， 回车（确认文件名），Ctrl + X退出编辑</p>
+<h6 id="更新软件列表"><a href="#更新软件列表" class="headerlink" title="更新软件列表"></a>更新软件列表</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get update</span><br></pre></td></tr></table></figure>
+
+<h6 id="升级软件包"><a href="#升级软件包" class="headerlink" title="升级软件包"></a>升级软件包</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get upgrade</span><br></pre></td></tr></table></figure>
+
+<p>到这里初步的操作差不多完成了，接下来就是解决网络问题。</p>
+<h5 id="设置网络"><a href="#设置网络" class="headerlink" title="设置网络"></a>设置网络</h5><blockquote>
+<p>如果你是选择网线连接，那可以跳过这一步。因为需要我的情况用网线连接不方便，所以我还是选择用wifi连接。</p>
+</blockquote>
+<h6 id="ssh远程设置wifi"><a href="#ssh远程设置wifi" class="headerlink" title="ssh远程设置wifi"></a>ssh远程设置wifi</h6><p>根据官方的文档，操作如下：</p>
+<p><img src="https://pic.imgdb.cn/item/612f020944eaada739424604.png" alt="raspi-config"></p>
+<ol>
+<li><p>进入raspi-config界面</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">raspi-config</span><br></pre></td></tr></table></figure></li>
+<li><p>修改Localisation Options中wireless country项，设置成China，接着修改TimeZone。</p>
+</li>
+<li><p>修改完成后，按Esc返回上一级菜单，有需要的话，可以扩展文件系统到整个SD磁盘空间，不需要的跳过下面步骤。</p>
+</li>
+<li><p>返回到raspi-config主界面，选择Advanced Options，Enter进入下一级，选择Expand Filesystem，回车即可。</p>
+</li>
+</ol>
+<h6 id="扫描WI-FI"><a href="#扫描WI-FI" class="headerlink" title="扫描WI-FI"></a>扫描WI-FI</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo iwlist wlan0 scan</span><br></pre></td></tr></table></figure>
+
+<p>记下要连接的wifi的ESSID。接着修改wpa_supplicant.conf文件。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano /etc/wpa_supplicant/wpa_supplicant.conf</span><br></pre></td></tr></table></figure>
+
+<p>在文件底部输入wifi的信息，例如：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">network=&#123;</span><br><span class="line">    ssid=<span class="string">&quot;WOW,WIFI&quot;</span></span><br><span class="line">    psk=<span class="string">&quot;123456789&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Ctrl + O 保存， 回车（确认文件名），Ctrl + X退出编辑。</p>
+<h6 id="验证wifi"><a href="#验证wifi" class="headerlink" title="验证wifi"></a>验证wifi</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wpa_cli -i wlan0 reconfigure</span><br></pre></td></tr></table></figure>
+
+<p>返回成功，连wifi没问题了。</p>
+<h6 id="安全重启"><a href="#安全重启" class="headerlink" title="安全重启"></a>安全重启</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reboot 或者 shutdown -r now</span><br></pre></td></tr></table></figure>
+
+
+
+<p>到这里，差不多的步骤就走完了，可以各种玩耍了。但有一点需要注意的是，设备每次连接WI-FI可能分配的ip都不一样，为了方便起见，就需要用到静态分配ip，这部分内容将会在另外一个文章分享出来。</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>Kaqiup</span>
+                    </p>
+                
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>© 2021 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/SSH/"># SSH</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/posts/684d1cd5/">树莓派常用工具集</a>
+            
+            
+            <a class="next" rel="next" href="/posts/c8cc8a0b/">记录一次新硬盘迁移系统的经历</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© Kaqiup | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>

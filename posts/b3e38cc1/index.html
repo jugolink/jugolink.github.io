@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="Kaqiup">
+
+
+
+
+
+<title>提高树莓派安全性 | Kaq&#39;s Blog</title>
+
+
+
+    <link rel="icon" href="http://img.nikooo.site/NIKOOO.png">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Kaq&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Home</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" target="_blank" rel="noopener" href="https://www.nikooo.site">Community</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Kaq&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Home</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" target="_blank" rel="noopener" href="https://www.nikooo.site">Community</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">提高树莓派安全性</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">Kaqiup</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">September 3, 2021&nbsp;&nbsp;22:36:17</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h2 id=""><a href="#" class="headerlink" title=""></a></h2><span id="more"></span> 
+
+<h2 id="提高树莓派安全性"><a href="#提高树莓派安全性" class="headerlink" title="提高树莓派安全性"></a>提高树莓派安全性</h2><h3 id="更改树莓派用户名"><a href="#更改树莓派用户名" class="headerlink" title="更改树莓派用户名"></a>更改树莓派用户名</h3><h4 id="创建新用户"><a href="#创建新用户" class="headerlink" title="创建新用户"></a>创建新用户</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sido adduser anran</span><br></pre></td></tr></table></figure>
+<!-- more -->
+<p>将提示您为新用户创建密码。这里新用户名设置成了<strong>anran</strong>，此时新用户将有一个家庭目录在。<code>/home/anran/</code></p>
+<h4 id="添加到组，并授权"><a href="#添加到组，并授权" class="headerlink" title="添加到组，并授权"></a>添加到组，并授权</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo usermod -a -G adm,dialout,cdrom,sudo,audio,video,plugdev,games,users,input,netdev,gpio,i2c,spi anran</span><br></pre></td></tr></table></figure>
+
+<p>尝试以下措施来检查您的权限是否到位</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo su - anran</span><br></pre></td></tr></table></figure>
+
+<p>如果它运行成功，那么可以确定新帐户在组中。</p>
+<h4 id="删除旧用户-系统原用户pi"><a href="#删除旧用户-系统原用户pi" class="headerlink" title="删除旧用户(系统原用户pi)"></a>删除旧用户(系统原用户pi)</h4><p>一旦确认新帐户正常工作，可以删除用户。为此，需要首先关闭其流程。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pkill -u pi</span><br></pre></td></tr></table></figure>
+
+<p>请注意，与当前的树莓派操作系统分配，有一些方面要求用户在场。如果不确定自己是否会受到此影响，请将用户保留。</p>
+<p>要删除用户，请键入</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo deluser pi</span><br></pre></td></tr></table></figure>
+
+<p>此命令将删除用户，但将离开文件夹。如有必要，可以使用下面的命令同时为用户删除主文件夹。请注意，此文件夹中的数据将被永久删除，因此请确保任何所需的数据存储在其他地方。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo deluser -remove-home pi</span><br></pre></td></tr></table></figure>
+
+<p>此命令将导致警告该组不再有成员。不过，该命令会删除用户和组。</p>
+<h4 id="使sudo需要密码"><a href="#使sudo需要密码" class="headerlink" title="使sudo需要密码"></a>使sudo需要密码</h4><p>默认情况下，以超级用户的身份运行不需要密码。一般来说，这不是问题。但是，如果你的 Pi 暴露在互联网上，并以某种方式被利用（例如，通过网页漏洞利用），攻击者将能够更改需要超级用户凭据的操。所以设置sudo强制需要密码就很必要了。</p>
+<p>在命令行输入：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo visudo /etc/sudoers.d/010_pi-nopasswd</span><br></pre></td></tr></table></figure>
+
+<p>并将条目（或任何用户名具有超用户权）更改为：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pi ALL=(ALL) PASSWD: ALL</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="提高ssh安全性"><a href="#提高ssh安全性" class="headerlink" title="提高ssh安全性"></a>提高ssh安全性</h3><blockquote>
+<p>SSH 是远程访问树莓派的常见方式。默认情况下，登录 SSH 需要用户名/密码。更安全的方法是使用基于密钥的身份验证。</p>
+</blockquote>
+<h4 id="改进用户名-密码安全性"><a href="#改进用户名-密码安全性" class="headerlink" title="改进用户名/密码安全性"></a>改进用户名/密码安全性</h4><p>上文有提及。这里不赘述。</p>
+<h4 id="更改配置来允许或拒绝特定用户"><a href="#更改配置来允许或拒绝特定用户" class="headerlink" title="更改配置来允许或拒绝特定用户"></a>更改配置<strong>来允许</strong>或<strong>拒绝</strong>特定用户</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano /etc/ssh/sshd_config</span><br></pre></td></tr></table></figure>
+
+
+
+<p>这里提供windows下，ssh远程登陆的方法</p>
+<ol>
+<li><p>检查用来连接树莓派的计算机上是否已经有密钥</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dir ~/.ssh</span><br></pre></td></tr></table></figure>
+
+<p>如果存在，则会返回<code>id_rsa  id_rsa.pub  known_hosts</code>类似信息，可以跳到第三步。</p>
+</li>
+<li><p>没有密钥的情况下，在有安装git的情况下，打开git bash</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen</span><br></pre></td></tr></table></figure>
+
+<p>生成密钥</p>
+</li>
+<li><p>将公钥发送到树莓派上</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-copy-id 树莓派用户名@树莓派ip</span><br></pre></td></tr></table></figure>
+
+<p>回复*<em>Are you sure you want to continue connecting ?</em>  ， 输入yes，回车即可</p>
+</li>
+<li><p>之后退出登陆利用ssh登陆工具，设置密钥登陆，输入树莓派的用户名，即可登陆成功了。</p>
+</li>
+</ol>
+<h4 id="可选择-禁用密码登陆ssh"><a href="#可选择-禁用密码登陆ssh" class="headerlink" title="(可选择)禁用密码登陆ssh"></a>(可选择)禁用密码登陆ssh</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano /etc/ssh/sshd_config</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ChallengeResponseAuthentication no</span><br><span class="line">PasswordAuthentication no</span><br><span class="line">UsePAM no</span><br></pre></td></tr></table></figure>
+
+<p>保存后，重启ssh</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service ssh reload</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="防火墙"><a href="#防火墙" class="headerlink" title="防火墙"></a>防火墙</h3><h4 id="安装UFW"><a href="#安装UFW" class="headerlink" title="安装UFW"></a>安装UFW</h4><p>Linux 有许多防火墙解决方案。大多数使用底层<a target="_blank" rel="noopener" href="https://www.netfilter.org/projects/iptables/index.html">iptable</a>项目来提供数据包过滤，此项目位于 Linux 网络过滤系统上，默认安装在树莓派操作系统上，但未设置，设置它也是一个复杂的任务。<a target="_blank" rel="noopener" href="https://www.linux.com/learn/introduction-uncomplicated-firewall-ufw">ufw</a>是一个提供简单界面的防火墙”。这是 Ubuntu 的默认防火墙工具，可轻松安装在树莓派上。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install ufw</span><br></pre></td></tr></table></figure>
+
+<h4 id="启用防火墙"><a href="#启用防火墙" class="headerlink" title="启用防火墙"></a>启用防火墙</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ufw <span class="built_in">enable</span></span><br></pre></td></tr></table></figure>
+
+<p>由于是通过ssh远程登陆，所以会收到这个回复</p>
+<p><strong>Command may disrupt existing ssh connections. Proceed with operation (y|n)?</strong></p>
+<p>ssh连接可能会被中断，输入<strong>y</strong>，即可。若ssh连接被中断重新登陆就是。</p>
+<h4 id="关闭防火墙"><a href="#关闭防火墙" class="headerlink" title="关闭防火墙"></a>关闭防火墙</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ufw <span class="built_in">disable</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="允许特定端口进入-默认已使用22端口"><a href="#允许特定端口进入-默认已使用22端口" class="headerlink" title="允许特定端口进入(默认已使用22端口)"></a>允许特定端口进入(默认已使用22端口)</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ufw allow 22</span><br></pre></td></tr></table></figure>
+
+<h4 id="拒绝某个端口访问-同样以22端口示例"><a href="#拒绝某个端口访问-同样以22端口示例" class="headerlink" title="拒绝某个端口访问(同样以22端口示例)"></a>拒绝某个端口访问(同样以22端口示例)</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ufw deny 22</span><br></pre></td></tr></table></figure>
+
+<h4 id="限制给端口提供的服务"><a href="#限制给端口提供的服务" class="headerlink" title="限制给端口提供的服务"></a>限制给端口提供的服务</h4><p>指定允许或拒绝在端口上提供哪些服务。示例：拒绝在端口 22 上使用 tcp：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ufw deny 22/tcp</span><br></pre></td></tr></table></figure>
+
+<h4 id="允许ssh通过防火墙访问"><a href="#允许ssh通过防火墙访问" class="headerlink" title="允许ssh通过防火墙访问"></a>允许ssh通过防火墙访问</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ufw allow ssh</span><br></pre></td></tr></table></figure>
+
+<h4 id="查询防火墙当前状态"><a href="#查询防火墙当前状态" class="headerlink" title="查询防火墙当前状态"></a>查询防火墙当前状态</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ufw status</span><br></pre></td></tr></table></figure>
+
+<h4 id="限制登陆次数"><a href="#限制登陆次数" class="headerlink" title="限制登陆次数"></a>限制登陆次数</h4><p>限制使用 tcp 登录 ssh 端口的尝试：如果 IP 地址在过去 30 秒内尝试连接六次或六次以上，此会拒绝连接</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ufw <span class="built_in">limit</span> ssh/tcp</span><br></pre></td></tr></table></figure>
+
+<h4 id="拒绝ip从某个端口访问-示例"><a href="#拒绝ip从某个端口访问-示例" class="headerlink" title="拒绝ip从某个端口访问(示例)"></a>拒绝ip从某个端口访问(示例)</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ufw deny from 192.168.2.1 port 30</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h4><p>在安装完防火墙后，原本部署好的仪表盘无法访问了，原因是：防火墙阻拦了80端口的流量进出，用指令打开即可权限。</p>
+<p>这里我设置成了只允许某个端口输出流量，不允许进入流量</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">用网线联网：sudo ufw allow out on eth0 to any port 80 proto tcp</span><br><span class="line">用wifi：sudo ufw allow out on wlan0 to any port 80 proto tcp</span><br></pre></td></tr></table></figure>
+
+
+
+<p>有关UFW具体的操作指南，可以参见此处：<a target="_blank" rel="noopener" href="https://www.linux.com/training-tutorials/introduction-uncomplicated-firewall-ufw/">简单防火墙简介 （UFW） - Linux.com</a></p>
+<p>参考文章：<a target="_blank" rel="noopener" href="https://www.raspberrypi.org/documentation/computers/configuration.html#configuring-uarts">树莓派文档 - 配置 (raspberrypi.org)</a></p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>Kaqiup</span>
+                    </p>
+                
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>© 2021 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/SSH/"># SSH</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/posts/db732554/">mac下搭建hexo博客</a>
+            
+            
+            <a class="next" rel="next" href="/posts/bca8235e/">树莓派WI-FI配置</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© Kaqiup | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>
