@@ -243,7 +243,7 @@ a:hover {
   height: 4rem;
   width: 100%;
   text-align: center;
-  line-height: 1.5rem;
+  line-height: 4rem;
   padding-top: 2em;
 }
 @charset "utf-8";
@@ -1360,4 +1360,11 @@ header label {
 .post-content pre .keyword,
 .post-content pre .javascript .function {
   color: #8959a8;
+}
+.footer {
+  height: 4rem;
+  width: 100%;
+  text-align: center;
+  line-height: 1.5rem;
+  padding-top: 2em;
 }
