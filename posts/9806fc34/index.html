@@ -13,7 +13,7 @@
 
 
 
-<title>树莓派WI-FI配置 | Kaq&#39;s Blog</title>
+<title>hexo文章生成永久链接 | Kaq&#39;s Blog</title>
 
 
 
@@ -193,7 +193,7 @@
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">树莓派WI-FI配置</h1>
+            <h1 class="post-title">hexo文章生成永久链接</h1>
             
                 <div class="post-meta">
                     
@@ -202,66 +202,31 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">September 3, 2021&nbsp;&nbsp;22:27:47</a>
+                        Date: <a href="#">November 4, 2021&nbsp;&nbsp;0:42:22</a>
                         </span>
                     
-                    
-                        <span class="post-category">
-                    Category:
-                            
-                                <a href="/categories/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派</a>
-                            
-                        </span>
                     
                 </div>
             
         </header>
 
         <div class="post-content">
-            <h2 id=""><a href="#" class="headerlink" title=""></a></h2><span id="more"></span> 
+            <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>Hexo默认使用的文章永久链接格式是：year/:month/:day/:title/<br>如果遇上个中文标题，由于编码的问题，在分享文章链接的时候往往变成乱码，这种方式不仅导致链接变得非常长，而且一旦修改文章发布日期或者标题，链接立马失效，造成大量死链。</p>
+<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><p>abbrlink插件可以帮助我们很好的解决这个问题，Github仓库如下：<a target="_blank" rel="noopener" href="https://github.com/rozbo/hexo-abbrlink">传送门</a></p>
+<h4 id="安装abbrlink插件"><a href="#安装abbrlink插件" class="headerlink" title="安装abbrlink插件"></a>安装abbrlink插件</h4><p>在博客根目录（执行hexo命令的地方）安装插件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-abbrlink --save</span><br></pre></td></tr></table></figure>
 
+<h4 id="编辑站点配置文件"><a href="#编辑站点配置文件" class="headerlink" title="编辑站点配置文件"></a>编辑站点配置文件</h4><p>打开博客根目录下的站点配置文件_config.yml，修改如下配置：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#permalink: :year/:month/:day/:title/</span></span><br><span class="line"><span class="comment">#permalink_defaults:</span></span><br><span class="line">permalink: posts/:abbrlink/</span><br><span class="line">abbrlink:</span><br><span class="line">  alg: crc32 <span class="comment">#support crc16(default) and crc32</span></span><br><span class="line">  rep: dec   <span class="comment">#support dec(default) and hex</span></span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>一般我们习惯使用明文密码，但着安全性不可靠，官方提供了以ASCII表示密码，操作流程请看下文。</p>
+<p>abbrlink属性介绍<br>alg – Algorithm (currently support crc16 and crc32, which crc16 is default)<br>rep – Represent (the generated link could be presented in hex or dec value)</p>
 </blockquote>
-<h4 id="扫描WI-FI"><a href="#扫描WI-FI" class="headerlink" title="扫描WI-FI"></a>扫描WI-FI</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo iwlist wlan0 scan</span><br></pre></td></tr></table></figure>
+<p>示例：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">crc16 &amp; hex</span><br><span class="line">https://post.zz173.com/posts/66c8.html</span><br><span class="line"></span><br><span class="line">crc16 &amp; dec</span><br><span class="line">https://post.zz173.com/posts/65535.html</span><br><span class="line"></span><br><span class="line">crc32 &amp; hex</span><br><span class="line">https://post.zz173.com/posts/8ddf18fb.html</span><br><span class="line"></span><br><span class="line">crc32 &amp; dec</span><br><span class="line">https://post.zz173.com/posts/1690090958.html</span><br></pre></td></tr></table></figure>
 
-<p>确定waln列表里有要选择的WI-FI。</p>
-<h4 id="设置WI-FI"><a href="#设置WI-FI" class="headerlink" title="设置WI-FI"></a>设置WI-FI</h4><h5 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h5><blockquote>
-<p>粘贴加密的psk</p>
-</blockquote>
-<ol>
-<li><p>命令行输入</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo raspi-config</span><br></pre></td></tr></table></figure>
-
-<p>出于监管目的，需要指定设备的使用国。从菜单中选择<strong>本地化选项</strong>项目，然后<strong>从更改无线国家选项</strong>中选择” 更改无线国家/地区选项。按ESC返回到命令行。</p>
-</li>
-<li><p>输入</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wpa_passphrase <span class="string">&quot;wifi名称&quot;</span> <span class="string">&quot;wifi密码&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p> 将生成的以ASCII码显示的psk复制下来。</p>
-</li>
-<li><p>命令行输入</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano /etc/wpa_supplicant/wpa_supplicant.conf</span><br></pre></td></tr></table></figure>
-
-<p> 进入wpa_supplicant.conf文件，在文末添加，并且将刚刚复制的psk的ASCII码粘贴到psk后边。</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">network=&#123;</span><br><span class="line">    ssid=<span class="string">&quot;wifi名称&quot;</span></span><br><span class="line">       psk=</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ol>
-<p><img src="https://pic.imgdb.cn/item/6131bbd744eaada739088d3f.png" alt="psk"></p>
-<p>Ctrl＋O保存，回车， Ctrl + X退出编辑。</p>
-<h5 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h5><blockquote>
-<p>将工具的输出重定向到配置文件，在被问及时呼叫并输入密码</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rootsudo suwpa_passphrase <span class="string">&quot;wifi名称&quot;</span> &gt;&gt; /etc/wpa_supplicant/wpa_supplicant.conf</span><br></pre></td></tr></table></figure>
-
-<p>或</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wpa_passphrase <span class="string">&quot;wifi名称&quot;</span> | sudo tee -a /etc/wpa_supplicant/wpa_supplicant.conf &gt; /dev/null/dev/nulltee</span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="验证wifi可用性"><a href="#验证wifi可用性" class="headerlink" title="验证wifi可用性"></a>验证wifi可用性</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wpa_cli -i wlan0 reconfigure</span><br></pre></td></tr></table></figure>
-
-<p>回复OK，即设置成功了。</p>
-<p>参考链接：<a target="_blank" rel="noopener" href="https://www.raspberrypi.org/documentation/computers/configuration.html#configuring-uarts">树莓派文档 - 配置 (raspberrypi.org)</a></p>
+<h4 id="重新生成部署"><a href="#重新生成部署" class="headerlink" title="重新生成部署"></a>重新生成部署</h4><p>使用<code>hexo clean &amp;&amp; hexo g</code>重新生成博客，在博客源文件可以看到自动生成的abbrlink编号：</p>
+<h4 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h4><p>只要abbrlink编号不变，该文章的url就不变，可以随意修改文件名，文章标题；<br>纯英文和数字链接非常有利于SEO；</p>
+<h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><p><a target="_blank" rel="noopener" href="https://github.com/rozbo/hexo-abbrlink">https://github.com/rozbo/hexo-abbrlink</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/Mculover666/article/details/103137719/">https://blog.csdn.net/Mculover666/article/details/103137719/</a></p>
 
         </div>
 
@@ -289,12 +254,6 @@
                 <span>Tag(s):</span>
                 <span class="tag">
                     
-                    
-                        <a href="/tags/SSH/"># SSH</a>
-                    
-                        <a href="/tags/WIFI%E8%AE%BE%E7%BD%AE/"># WIFI设置</a>
-                    
-                        
                 </span>
             </div>
             <div>
@@ -305,10 +264,8 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/posts/b3e38cc1/">提高树莓派安全性</a>
             
-            
-            <a class="next" rel="next" href="/posts/a4bbd2e0/">用网线连接电脑和树莓派</a>
+            <a class="next" rel="next" href="/posts/97a151e0/">关于博客的通知</a>
             
         </section>
 
