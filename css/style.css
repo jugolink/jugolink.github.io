@@ -1368,18 +1368,3 @@ header label {
   line-height: 1.5rem;
   padding-top: 2em;
 }
-.navbar {
-  width: 100%;
-  background: #fff;
-  border-bottom: 1px solid #dcdcdc;
-  z-index: 30;
-  position: fixed;
-  top: -7px;
-  left: 0px;
-  padding-left: 50px;
-  padding-right: 50px;
-  height: 60px;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
