@@ -346,14 +346,34 @@
                 <a href="/">Home</a>
             </div> -->
         </section>
-
+        
         <section class="post-comments">
-
             
+<div id="valine"></div>
+<script defer src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+  window.onload = function () {
+    var loadValine = function () {
+      new Valine({
+        el: '#valine',
+        app_id: "zef0eGzlAbn8lf4NoApjPgid-gzGzoHsz",
+        app_key: "lqieqRuPhke7jIA9rVFWDV0z",
+        placeholder: "说点什么吧～",
+        avatar: "robohashz",
+        pageSize: "10",
+        lang: "zh-CN",
+      });
+    }
+    loadValine();
+  };
+</script>
+
+        </section>
+        <!-- <section class="post-comments">
+                
         </section>
 
         <section class="post-comments">
-
             
                 <style>
     .twikoo-card {
@@ -628,7 +648,7 @@
 </script>
 
             
-        </section>
+        </section> -->
 
     </article>
     
