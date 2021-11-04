@@ -1368,8 +1368,16 @@ header label {
   line-height: 1.5rem;
   padding-top: 2em;
 }
-.footer .post-tags {
-  padding: 4rem 0 1rem;
-  display: flex;
-  justify-content: space-between;
+.navbar .container {
+  width: 100%;
+  background: #fff;
+  border-bottom: 1px solid #dcdcdc;
+  z-index: 30;
+  position: fixed;
+  top: -14px;
+  left: -1px;
+  padding-left: 47px;
+  padding-right: 49px;
+  height: 60px;
+  box-sizing: border-box;
 }
