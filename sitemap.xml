@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://www.nikooo.top/posts/2f57a694.html</loc>
+    <loc>https://blog.kaqiup.xyz/posts/40e9506b.html</loc>
     
     <lastmod>2021-11-14</lastmod>
     
@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>https://www.nikooo.top/category/index.html</loc>
+    <loc>https://blog.kaqiup.xyz/posts/64479a0f.html</loc>
     
     <lastmod>2021-11-14</lastmod>
     
@@ -20,7 +20,7 @@
   </url>
   
   <url>
-    <loc>https://www.nikooo.top/tag/index.html</loc>
+    <loc>https://blog.kaqiup.xyz/posts/6b74976.html</loc>
     
     <lastmod>2021-11-14</lastmod>
     
@@ -29,9 +29,99 @@
   </url>
   
   <url>
-    <loc>https://www.nikooo.top/posts/4a17b156.html</loc>
+    <loc>https://blog.kaqiup.xyz/posts/9f895c2e.html</loc>
     
-    <lastmod>2021-11-13</lastmod>
+    <lastmod>2021-11-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.kaqiup.xyz/posts/45f0cf50.html</loc>
+    
+    <lastmod>2021-11-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.kaqiup.xyz/posts/a7f612dd.html</loc>
+    
+    <lastmod>2021-11-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.kaqiup.xyz/posts/6c0957e8.html</loc>
+    
+    <lastmod>2021-11-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.kaqiup.xyz/posts/11998d59.html</loc>
+    
+    <lastmod>2021-11-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.kaqiup.xyz/posts/d9e112c3.html</loc>
+    
+    <lastmod>2021-11-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.kaqiup.xyz/posts/24e54465.html</loc>
+    
+    <lastmod>2021-11-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.kaqiup.xyz/posts/af6d569a.html</loc>
+    
+    <lastmod>2021-11-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.kaqiup.xyz/about/index.html</loc>
+    
+    <lastmod>2021-11-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.kaqiup.xyz/category/index.html</loc>
+    
+    <lastmod>2021-11-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.kaqiup.xyz/tag/index.html</loc>
+    
+    <lastmod>2021-11-14</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -39,13 +129,62 @@
   
 
   <url>
-    <loc>https://www.nikooo.top/</loc>
+    <loc>https://blog.kaqiup.xyz/</loc>
     <lastmod>2021-11-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   
+  <url>
+    <loc>https://blog.kaqiup.xyz/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/</loc>
+    <lastmod>2021-11-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.kaqiup.xyz/tags/raspberry/</loc>
+    <lastmod>2021-11-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.kaqiup.xyz/tags/python/</loc>
+    <lastmod>2021-11-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.kaqiup.xyz/tags/%E9%83%A8%E7%BD%B2/</loc>
+    <lastmod>2021-11-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.kaqiup.xyz/tags/hexo/</loc>
+    <lastmod>2021-11-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
 
+  
+  <url>
+    <loc>https://blog.kaqiup.xyz/categories/%E6%95%99%E7%A8%8B/</loc>
+    <lastmod>2021-11-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.kaqiup.xyz/categories/%E6%97%A5%E8%AE%B0/</loc>
+    <lastmod>2021-11-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
   
 </urlset>

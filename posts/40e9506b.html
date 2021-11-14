@@ -13,7 +13,7 @@
 
 
 
-<title>Hello World | Jugolink&#39;s Blog</title>
+<title>在ubuntu中的一天 | Jugolink&#39;s Blog</title>
 
 
 
@@ -78,7 +78,7 @@
                 
                     <a class="menu-item" href="/tag">Tags</a>
                 
-                    <a class="menu-item" href="/about">About</a>
+                    <a class="menu-item" target="_blank" rel="noopener" href="https://www.nikooo.site">Community</a>
                 
                 <input id="switch_default" type="checkbox" class="switch_default">
                 <label for="switch_default" class="toggleBtn"></label>
@@ -103,7 +103,7 @@
                 
                     <a class="menu-item" href="/tag">Tags</a>
                 
-                    <a class="menu-item" href="/about">About</a>
+                    <a class="menu-item" target="_blank" rel="noopener" href="https://www.nikooo.site">Community</a>
                 
             </div>
         </div>
@@ -127,103 +127,46 @@
                 <div class="container">
     
     
-        <div class="post-toc">
-    <div class="tocbot-list">
-    </div>
-    <div class="tocbot-list-menu">
-        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
-        <a onclick="go_top()">Back to top</a>
-        <a onclick="go_bottom()">Go to bottom</a>
-    </div>
-</div>
-
-<script>
-    document.ready(
-        function () {
-            tocbot.init({
-                tocSelector: '.tocbot-list',
-                contentSelector: '.post-content',
-                headingSelector: 'h1, h2, h3, h4, h5',
-                collapseDepth: 1,
-                orderedList: false,
-                scrollSmooth: true,
-            })
-        }
-    )
-
-    function expand_toc() {
-        var b = document.querySelector(".tocbot-toc-expand");
-        tocbot.init({
-            tocSelector: '.tocbot-list',
-            contentSelector: '.post-content',
-            headingSelector: 'h1, h2, h3, h4, h5',
-            collapseDepth: 6,
-            orderedList: false,
-            scrollSmooth: true,
-        });
-        b.setAttribute("onclick", "collapse_toc()");
-        b.innerHTML = "Collapse all"
-    }
-
-    function collapse_toc() {
-        var b = document.querySelector(".tocbot-toc-expand");
-        tocbot.init({
-            tocSelector: '.tocbot-list',
-            contentSelector: '.post-content',
-            headingSelector: 'h1, h2, h3, h4, h5',
-            collapseDepth: 1,
-            orderedList: false,
-            scrollSmooth: true,
-        });
-        b.setAttribute("onclick", "expand_toc()");
-        b.innerHTML = "Expand all"
-    }
-
-    function go_top() {
-        window.scrollTo(0, 0);
-    }
-
-    function go_bottom() {
-        window.scrollTo(0, document.body.scrollHeight);
-    }
-
-</script>
-    
 
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">Hello World</h1>
+            <h1 class="post-title">在ubuntu中的一天</h1>
             
                 <div class="post-meta">
+
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/%E6%97%A5%E8%AE%B0/">日记</a>
+                            
+                        </span>
+                    
+                    Tag(s):
+                    <span class="tag">
+                        
+                    </span>
+                </div>
+                <div>
                     
                         Author: <a itemprop="author" rel="author" href="/">Jugolink</a>
                     
 
                     
                         <span class="post-time">
-                        Date: <a href="#">November 8, 2021&nbsp;&nbsp;22:44:11</a>
+                        Date: <a href="#">November 15, 2021&nbsp;&nbsp;0:02:00</a>
                         </span>
-                    
                     
                 </div>
             
         </header>
 
         <div class="post-content">
-            <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+            <p>在尝试了几个linux发行版后，最终将尝试停留在了ubuntu，不得不说，还是ubuntu比较香，大部分软件都有兼容，不会像debian那么费劲。</p>
+<p>琐碎的在几天里，基本习惯了在ubuntu下做事情，值得一提的是在安装代理工具时花了比较多时间，目前基本默认开机启动了全局代理，日常google不在话下，这在之前在mac和win下，多了更多方便之处，基于这点，在拉取github上的项目时，速度快了很多。</p>
+<p>另外，在ubuntu下，重新搭建了一个博客，托管在github的另一个账号上，这个博客主题应该是迄今为止最最喜欢的主题，简约，极致的简约，后续增加一个评论功能，这个功能已经在另一个chic主题下的博客下添加了。</p>
+<p>我也会问自己，搞这么多个博客或者论坛干啥，因为好玩哈哈，今天先写到这里。</p>
 
         </div>
 
@@ -238,7 +181,7 @@
                 
                     <p class="copyright-item">
                         <span>Permalink:</span>
-                        <span><a href="https://www.nikooo.top/posts/4a17b156.html">https://www.nikooo.top/posts/4a17b156.html</a></span>
+                        <span><a href="https://blog.kaqiup.xyz/posts/40e9506b.html">https://blog.kaqiup.xyz/posts/40e9506b.html</a></span>
                     </p>
                 
                 
@@ -251,7 +194,7 @@
 
             </section>
         
-        <section class="post-tags">
+        <!-- <section class="post-tags">
             <div>
                 <span>Tag(s):</span>
                 <span class="tag">
@@ -263,11 +206,11 @@
                 <span>· </span>
                 <a href="/">home</a>
             </div>
-        </section>
+        </section> -->
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/posts/2f57a694.html">正则表达式</a>
             
+            <a class="next" rel="next" href="/posts/64479a0f.html">黑苹果更新opencore版本</a>
             
         </section>
 
