@@ -13,7 +13,7 @@
 
 
 
-<title>在ubuntu中的一天 | Jugolink&#39;s Blog</title>
+<title>Hexo部署后Github Pages自定义域名失效解决方案 | Jugolink&#39;s Blog</title>
 
 
 
@@ -127,11 +127,73 @@
                 <div class="container">
     
     
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
 
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">在ubuntu中的一天</h1>
+            <h1 class="post-title">Hexo部署后Github Pages自定义域名失效解决方案</h1>
             
                 <div class="post-meta">
 
@@ -139,7 +201,7 @@
                         <span class="post-category">
                     Category:
                             
-                                <a href="/categories/%E6%97%A5%E8%AE%B0/">日记</a>
+                                <a href="/categories/%E6%95%99%E7%A8%8B/">教程</a>
                             
                         </span>
                     
@@ -155,7 +217,7 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">November 15, 2021&nbsp;&nbsp;0:02:00</a>
+                        Date: <a href="#">November 15, 2021&nbsp;&nbsp;0:20:00</a>
                         </span>
                     
                 </div>
@@ -163,10 +225,20 @@
         </header>
 
         <div class="post-content">
-            <p>在尝试了几个linux发行版后，最终将尝试停留在了ubuntu，不得不说，还是ubuntu比较香，大部分软件都有兼容，不会像debian那么费劲。</p>
-<p>琐碎的在几天里，基本习惯了在ubuntu下做事情，值得一提的是在安装代理工具时花了比较多时间，目前基本默认开机启动了全局代理，日常google不在话下，这在之前在mac和win下，多了更多方便之处，基于这点，在拉取github上的项目时，速度快了很多。</p>
-<p>另外，在ubuntu下，重新搭建了一个博客，托管在github的另一个账号上，这个博客主题应该是迄今为止最最喜欢的主题，简约，极致的简约，后续增加一个评论功能，这个功能已经在另一个chic主题下的博客下添加了。</p>
-<p>我也会问自己，搞这么多个博客或者论坛干啥，因为好玩哈哈，今天先写到这里。</p>
+            <blockquote>
+<p>基于部署在github静态托管</p>
+</blockquote>
+<h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>在每次推送到github后，都要在github pages上重新设置绑定域名，着实麻烦，这里提供一个可行的解决办法。</p>
+<h4 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h4><ul>
+<li>进入hexo博客根目录下的source文件夹</li>
+<li>新建文件名为<code>CNAME</code>的文件，不带任何后缀</li>
+<li>编辑<code>CNAME</code>文件内容，在其中增加自己的域名(也就是每次在github pages中绑定的域名内容)，例如<code>blog.xiaoqiang.com</code></li>
+</ul>
+<h4 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h4><ul>
+<li>先保证域名可以正常访问博客</li>
+<li>推送  </li>
+</ul>
+<p>这个时候刷新博客，就可以看到博客仍然可以正常访问，而在此项设置之前，每次推送之后，都会无法访问，需要在github中重新绑定域名才能正常访问。</p>
 
         </div>
 
@@ -181,7 +253,7 @@
                 
                     <p class="copyright-item">
                         <span>Permalink:</span>
-                        <span><a href="https://blog.kaqiup.xyz/posts/40e9506b.html">https://blog.kaqiup.xyz/posts/40e9506b.html</a></span>
+                        <span><a href="https://blog.kaqiup.xyz/posts/463fd0e9.html">https://blog.kaqiup.xyz/posts/463fd0e9.html</a></span>
                     </p>
                 
                 
@@ -209,10 +281,8 @@
         </section> -->
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/posts/463fd0e9.html">Hexo部署后Github Pages自定义域名失效解决方案</a>
             
-            
-            <a class="next" rel="next" href="/posts/64479a0f.html">黑苹果更新opencore版本</a>
+            <a class="next" rel="next" href="/posts/40e9506b.html">在ubuntu中的一天</a>
             
         </section>
 
