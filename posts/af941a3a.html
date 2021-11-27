@@ -13,7 +13,7 @@
 
 
 
-<title>部署后自定义域名失效 | Jugolink&#39;s Blog</title>
+<title>hh | Jugolink&#39;s Blog</title>
 
 
 
@@ -129,73 +129,11 @@
                 <div class="container">
     
     
-        <div class="post-toc">
-    <div class="tocbot-list">
-    </div>
-    <div class="tocbot-list-menu">
-        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
-        <a onclick="go_top()">Back to top</a>
-        <a onclick="go_bottom()">Go to bottom</a>
-    </div>
-</div>
-
-<script>
-    document.ready(
-        function () {
-            tocbot.init({
-                tocSelector: '.tocbot-list',
-                contentSelector: '.post-content',
-                headingSelector: 'h1, h2, h3, h4, h5',
-                collapseDepth: 1,
-                orderedList: false,
-                scrollSmooth: true,
-            })
-        }
-    )
-
-    function expand_toc() {
-        var b = document.querySelector(".tocbot-toc-expand");
-        tocbot.init({
-            tocSelector: '.tocbot-list',
-            contentSelector: '.post-content',
-            headingSelector: 'h1, h2, h3, h4, h5',
-            collapseDepth: 6,
-            orderedList: false,
-            scrollSmooth: true,
-        });
-        b.setAttribute("onclick", "collapse_toc()");
-        b.innerHTML = "Collapse all"
-    }
-
-    function collapse_toc() {
-        var b = document.querySelector(".tocbot-toc-expand");
-        tocbot.init({
-            tocSelector: '.tocbot-list',
-            contentSelector: '.post-content',
-            headingSelector: 'h1, h2, h3, h4, h5',
-            collapseDepth: 1,
-            orderedList: false,
-            scrollSmooth: true,
-        });
-        b.setAttribute("onclick", "expand_toc()");
-        b.innerHTML = "Expand all"
-    }
-
-    function go_top() {
-        window.scrollTo(0, 0);
-    }
-
-    function go_bottom() {
-        window.scrollTo(0, document.body.scrollHeight);
-    }
-
-</script>
-    
 
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">部署后自定义域名失效</h1>
+            <h1 class="post-title">hh</h1>
             
                 <div class="post-meta">
                     
@@ -204,7 +142,7 @@
                     
                     
                         <span class="post-time">
-                        Date: <a href="#">November 15, 2021&nbsp;&nbsp;0:20:00</a>
+                        Date: <a href="#">November 27, 2021&nbsp;&nbsp;9:31:00</a>
                         </span>
                     
              
@@ -219,10 +157,6 @@
                     <span>Tag(s):</span>
                     <span class="tag">
                         
-                            
-                                <a href="/tags/%E9%83%A8%E7%BD%B2/"># 部署</a>
-                            
-                        
                     </span>
                 </div>
             
@@ -230,19 +164,43 @@
 
         <div class="post-content">
             <blockquote>
-<p>基于部署在github静态托管</p>
+<p>Nvidia-340 只兼容 Ubuntu 20.04 最初发布的 5.4 内核。如果你碰巧有 5.11，它会破坏一些东西,那么就需要回退内核版本。</p>
 </blockquote>
-<h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>在每次推送到github后，都要在github pages上重新设置绑定域名，着实麻烦，这里提供一个可行的解决办法。</p>
-<h4 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h4><ul>
-<li>进入hexo博客根目录下的source文件夹</li>
-<li>新建文件名为<code>CNAME</code>的文件，不带任何后缀</li>
-<li>编辑<code>CNAME</code>文件内容，在其中增加自己的域名(也就是每次在github pages中绑定的域名内容)，例如<code>blog.xiaoqiang.com</code></li>
+<ol>
+<li><p>获取当前内核版本<code>uname -r</code>,以确认版本信息。</p>
+</li>
+<li><p>命令行输入，开机启动grub菜单。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vim /etc/default/grub</span><br></pre></td></tr></table></figure>
+<p>作如下修改:</p>
+</li>
+</ol>
+<ul>
+<li><p>GRUB_TIMEOUT_STYLE=hidden</p>
+<ul>
+<li>如果该key未设置值或者设置的值为”menu”，则列出启动菜单项，并等待”GRUB_TIMEOUT”指定的超时时间。</li>
+<li>如果设置为”countdown”和”hidden”，则不显示启动菜单项，而是直接等待”GRUB_TIMEOUT”指定的超时时间，如果超时了则启动默认菜单项并引导对应的操作系统。</li>
+<li>在等待过程中，按下”ESC”键可以列出启动菜单。设置为countdown和hidden的区别是countdown会显示超时时间的剩余时间，而hidden则完全隐藏超时时间。</li>
 </ul>
-<h4 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h4><ul>
-<li>先保证域名可以正常访问博客</li>
-<li>推送  </li>
+</li>
+<li><p>GRUB_TIMEOUT=-1</p>
+<ul>
+<li>在开机选择菜单项的超时时间，超过该时间将使用默认的菜单项来引导对应的操作系统。默认值为5秒。等待过程中，按下任意按键都可以中断等待。</li>
+<li>设置为0时，将不列出菜单直接使用默认的菜单项引导与之对应的操作系统，设置为”-1”时将永久等待选择。是否显示菜单，和”GRUB_TIMEOUT_STYLE”的设置有关。</li>
 </ul>
-<p>这个时候刷新博客，就可以看到博客仍然可以正常访问，而在此项设置之前，每次推送之后，都会无法访问，需要在github中重新绑定域名才能正常访问。</p>
+</li>
+</ul>
+<ol start="3">
+<li><p>修改好后保存退出。运行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo update-grub</span><br></pre></td></tr></table></figure></li>
+<li><p>重启后手动选择了Kernel之后才会boot进入系统。</p>
+</li>
+<li><p>选择5.4的内核版本启动</p>
+</li>
+<li><p>卸载内核 5.11，如果5.11版本的内核仍然存在，Nvidia 模块也会为其构建，并且会构建失败。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt remove --purge linux-generic-hwe-20.04 linux-hwe-* linux-modules-5.11* linux-modules-extra-5.11*</span><br></pre></td></tr></table></figure></li>
+<li><p>安装nvidia-340驱动</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ubuntu-drivers autoinstall</span><br></pre></td></tr></table></figure></li>
+</ol>
 
         </div>
 
@@ -258,7 +216,7 @@
                 
                     <p class="copyright-item">
                         <span>Permalink:</span>
-                        <span><a href="https://blog.kaqiup.xyz/posts/463fd0e9.html">https://blog.kaqiup.xyz/posts/463fd0e9.html</a></span>
+                        <span><a href="https://blog.kaqiup.xyz/posts/af941a3a.html">https://blog.kaqiup.xyz/posts/af941a3a.html</a></span>
                     </p>
                 
                 
@@ -272,10 +230,8 @@
         
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/posts/af941a3a.html">hh</a>
             
-            
-            <a class="next" rel="next" href="/posts/64479a0f.html">黑苹果更新opencore版本</a>
+            <a class="next" rel="next" href="/posts/463fd0e9.html">部署后自定义域名失效</a>
             
 
         </section>
@@ -283,10 +239,6 @@
             <!-- <div>
                 <span>Tag(s):</span>
                 <span class="tag">
-                    
-                        
-                            <a href="/tags/%E9%83%A8%E7%BD%B2/"># 部署</a>
-                        
                     
                 </span>
             </div> 
