@@ -13,7 +13,7 @@
 
 
 
-<title>ubuntu20.04切换nvidia驱动 | Jugolink&#39;s Blog</title>
+<title>Ubuntu20.04桌面美化 | Jugolink&#39;s Blog</title>
 
 
 
@@ -129,11 +129,73 @@
                 <div class="container">
     
     
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    document.ready(
+        function () {
+            tocbot.init({
+                tocSelector: '.tocbot-list',
+                contentSelector: '.post-content',
+                headingSelector: 'h1, h2, h3, h4, h5',
+                collapseDepth: 1,
+                orderedList: false,
+                scrollSmooth: true,
+            })
+        }
+    )
+
+    function expand_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 6,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "collapse_toc()");
+        b.innerHTML = "Collapse all"
+    }
+
+    function collapse_toc() {
+        var b = document.querySelector(".tocbot-toc-expand");
+        tocbot.init({
+            tocSelector: '.tocbot-list',
+            contentSelector: '.post-content',
+            headingSelector: 'h1, h2, h3, h4, h5',
+            collapseDepth: 1,
+            orderedList: false,
+            scrollSmooth: true,
+        });
+        b.setAttribute("onclick", "expand_toc()");
+        b.innerHTML = "Expand all"
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+</script>
+    
 
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">ubuntu20.04切换nvidia驱动</h1>
+            <h1 class="post-title">Ubuntu20.04桌面美化</h1>
             
                 <div class="post-meta">
                     
@@ -142,7 +204,7 @@
                     
                     
                         <span class="post-time">
-                        Date: <a href="#">November 27, 2021&nbsp;&nbsp;9:31:00</a>
+                        Date: <a href="#">November 28, 2021&nbsp;&nbsp;20:28:00</a>
                         </span>
                     
              
@@ -157,6 +219,10 @@
                     <span>Tag(s):</span>
                     <span class="tag">
                         
+                            
+                                <a href="/tags/%E6%A1%8C%E9%9D%A2%E7%BE%8E%E5%8C%96/"># 桌面美化</a>
+                            
+                        
                     </span>
                 </div>
             
@@ -164,43 +230,70 @@
 
         <div class="post-content">
             <blockquote>
-<p>Nvidia-340 只兼容 Ubuntu 20.04 最初发布的 5.4 内核。如果你碰巧有 5.11，它会破坏一些东西,那么就需要回退内核版本。</p>
+<p>这种优化其实是可有可无的，如果是将ubuntu当成常用的系统，免不了每天和它打交道，所以让它变得更好看，还是意见比较开心的事情。</p>
 </blockquote>
-<ol>
-<li><p>获取当前内核版本<code>uname -r</code>,以确认版本信息。</p>
-</li>
-<li><p>命令行输入，开机启动grub菜单。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vim /etc/default/grub</span><br></pre></td></tr></table></figure>
-<p>作如下修改:</p>
-</li>
-</ol>
+<h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><h4 id="必要的软件"><a href="#必要的软件" class="headerlink" title="必要的软件"></a>必要的软件</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt install gnome-tweaks chrome-gnome-shell</span><br><span class="line">sudo apt install gtk2-engines-murrine gtk2-engines-pixbuf </span><br><span class="line">sudo apt install sassc optipng inkscape libcanberra-gtk-module libglib2.0-dev libxml2-utils</span><br></pre></td></tr></table></figure>
+
+<p>安装的这几个软件包具体有什么作用，可以分别去百度，当然你也可以选择直接安装，后续会将具体怎么用。</p>
+<h4 id="必要的插件"><a href="#必要的插件" class="headerlink" title="必要的插件"></a>必要的插件</h4><p>首先先从谷歌应用商店下载这个<a target="_blank" rel="noopener" href="https://chrome.google.com/webstore/detail/gnome-shell-integration/gphhapmejobijbbhgpjhcjognlahblep?hl=zh-CN">插件</a>，并且安装好。</p>
+<p>然后点击插件，进入gnome 插件的网址：<a href="https://link.zhihu.com/?target=https://extensions.gnome.org">https://extensions.gnome.org</a></p>
+<p>安装这几个插件：</p>
 <ul>
-<li><p>GRUB_TIMEOUT_STYLE=hidden</p>
+<li>user themes</li>
+<li>dash to dock</li>
+<li>netspeed</li>
+</ul>
+<p>安装后记得启用插件。</p>
+<p><img src="https://pic4.zhimg.com/80/v2-c275a7cbdfaf3d740ac07966b8a1fe6b_720w.jpg"></p>
+<h4 id="下载必要的美化包"><a href="#下载必要的美化包" class="headerlink" title="下载必要的美化包"></a>下载必要的美化包</h4><p>所有的美化包都可以从 <a href="https://link.zhihu.com/?target=https://www.gnome-look.org/">https://www.gnome-look.org</a> 这个网站下载的，我列出本次美化需要下载的美化包的详细下载地址。这个网站在国内访问非常的慢，如果你下载不下来，可以私信我获取。</p>
 <ul>
-<li>如果该key未设置值或者设置的值为”menu”，则列出启动菜单项，并等待”GRUB_TIMEOUT”指定的超时时间。</li>
-<li>如果设置为”countdown”和”hidden”，则不显示启动菜单项，而是直接等待”GRUB_TIMEOUT”指定的超时时间，如果超时了则启动默认菜单项并引导对应的操作系统。</li>
-<li>在等待过程中，按下”ESC”键可以列出启动菜单。设置为countdown和hidden的区别是countdown会显示超时时间的剩余时间，而hidden则完全隐藏超时时间。</li>
+<li><p>主题包：WhiteSur Gtk Theme</p>
+</li>
+<li><ul>
+<li><a href="https://link.zhihu.com/?target=https://www.gnome-look.org/p/1403328/">https://www.gnome-look.org/p/1403328/</a></li>
 </ul>
 </li>
-<li><p>GRUB_TIMEOUT=-1</p>
+<li><p>Icons 图标：WhiteSur icon theme</p>
+</li>
+<li><ul>
+<li><a href="https://link.zhihu.com/?target=https://www.pling.com/p/1405756/">https://www.pling.com/p/1405756/</a></li>
+</ul>
+</li>
+<li><p>鼠标图标：McMojave cursors</p>
+</li>
+<li><ul>
+<li><a href="https://link.zhihu.com/?target=https://www.pling.com/p/1355701/">https://www.pling.com/p/1355701/</a></li>
+</ul>
+</li>
+<li><p>壁纸：WhiteSur Wallpaper</p>
+</li>
+<li><ul>
+<li><a href="https://link.zhihu.com/?target=https://www.pling.com/p/1398833/">https://www.pling.com/p/1398833/</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="开始配置"><a href="#开始配置" class="headerlink" title="开始配置"></a>开始配置</h3><h4 id="安装主题包"><a href="#安装主题包" class="headerlink" title="安装主题包"></a>安装主题包</h4><p>安装 plank dock 工具Ubuntu 20.04 为所有用户提供的默认存放主题的文件夹分别如下：</p>
 <ul>
-<li>在开机选择菜单项的超时时间，超过该时间将使用默认的菜单项来引导对应的操作系统。默认值为5秒。等待过程中，按下任意按键都可以中断等待。</li>
-<li>设置为0时，将不列出菜单直接使用默认的菜单项引导与之对应的操作系统，设置为”-1”时将永久等待选择。是否显示菜单，和”GRUB_TIMEOUT_STYLE”的设置有关。</li>
+<li>主题包：/usr/share/themes/</li>
 </ul>
-</li>
+<p>将下载好的主题包解压到这个目录，或者解压后拷贝到这个目录。</p>
+<ul>
+<li>Icons 图标：/usr/share/icons</li>
 </ul>
-<ol start="3">
-<li><p>修改好后保存退出。运行</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo update-grub</span><br></pre></td></tr></table></figure></li>
-<li><p>重启后手动选择了Kernel之后才会boot进入系统。</p>
-</li>
-<li><p>选择5.4的内核版本启动</p>
-</li>
-<li><p>卸载内核 5.11，如果5.11版本的内核仍然存在，Nvidia 模块也会为其构建，并且会构建失败。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt remove --purge linux-generic-hwe-20.04 linux-hwe-* linux-modules-5.11* linux-modules-extra-5.11*</span><br></pre></td></tr></table></figure></li>
-<li><p>安装nvidia-340驱动</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ubuntu-drivers autoinstall</span><br></pre></td></tr></table></figure></li>
-</ol>
+<p>将下载好的 Icons 图标解压到这个目录，或者解压后拷贝到这个目录。</p>
+<ul>
+<li>鼠标图标：/usr/share/icon安装 plank dock 工具s</li>
+</ul>
+<p>将下载好的鼠标图标解压到这个目录，或者解压后拷贝到这个目录。</p>
+<ul>
+<li>选择下载的壁纸图片，右键设置为壁纸即可。</li>
+</ul>
+<p>上面的操作一定要保证正确无误，接下来就可以选择这些主题包，并让其生效了。</p>
+<p>打开 gnome-tweaks 工具，如下图：</p>
+<p><img src="https://pic3.zhimg.com/80/v2-00dc65a137297f2f7c7f1f2b4ec2cdf6_720w.jpg" alt="img"></p>
+<p>上图红色方框中选中的就是刚刚安装的主题，选中后桌面和图标、鼠标图标，shell 主题等都相应的变化了，注意对比。</p>
+<h4 id="配置dock栏"><a href="#配置dock栏" class="headerlink" title="配置dock栏"></a>配置dock栏</h4><p>在插件网址<a target="_blank" rel="noopener" href="https://extensions.gnome.org,找到dash/">https://extensions.gnome.org，找到dash</a> to dock插件，自由配置喜欢的栏目。</p>
+<h3 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h3><p>这个效果已经不错，当然你也可以继续做一些设置，让它更符合心中的样子。或者你可以在尝试更多的主题，满意就好。</p>
 
         </div>
 
@@ -216,7 +309,7 @@
                 
                     <p class="copyright-item">
                         <span>Permalink:</span>
-                        <span><a href="https://blog.kaqiup.xyz/posts/af941a3a.html">https://blog.kaqiup.xyz/posts/af941a3a.html</a></span>
+                        <span><a href="https://blog.kaqiup.xyz/posts/aae3ddbd.html">https://blog.kaqiup.xyz/posts/aae3ddbd.html</a></span>
                     </p>
                 
                 
@@ -230,10 +323,8 @@
         
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/posts/aae3ddbd.html">Ubuntu20.04桌面美化</a>
             
-            
-            <a class="next" rel="next" href="/posts/463fd0e9.html">部署后自定义域名失效</a>
+            <a class="next" rel="next" href="/posts/af941a3a.html">ubuntu20.04切换nvidia驱动</a>
             
 
         </section>
@@ -241,6 +332,10 @@
             <!-- <div>
                 <span>Tag(s):</span>
                 <span class="tag">
+                    
+                        
+                            <a href="/tags/%E6%A1%8C%E9%9D%A2%E7%BE%8E%E5%8C%96/"># 桌面美化</a>
+                        
                     
                 </span>
             </div> 
