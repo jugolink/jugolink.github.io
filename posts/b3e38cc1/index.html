@@ -44,7 +44,7 @@
     
 
 
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 <body>
     <script>
@@ -232,7 +232,7 @@
 <h2 id="提高树莓派安全性"><a href="#提高树莓派安全性" class="headerlink" title="提高树莓派安全性"></a>提高树莓派安全性</h2><h3 id="更改树莓派用户名"><a href="#更改树莓派用户名" class="headerlink" title="更改树莓派用户名"></a>更改树莓派用户名</h3><h4 id="创建新用户"><a href="#创建新用户" class="headerlink" title="创建新用户"></a>创建新用户</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sido adduser anran</span><br></pre></td></tr></table></figure>
 <!-- more -->
 <p>将提示您为新用户创建密码。这里新用户名设置成了<strong>anran</strong>，此时新用户将有一个家庭目录在。<code>/home/anran/</code></p>
-<h4 id="添加到组，并授权"><a href="#添加到组，并授权" class="headerlink" title="添加到组，并授权"></a>添加到组，并授权</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo usermod -a -G adm,dialout,cdrom,sudo,audio,video,plugdev,games,users,input,netdev,gpio,i2c,spi anran</span><br></pre></td></tr></table></figure>
+<h4 id="添加到组，并授权"><a href="#添加到组，并授权" class="headerlink" title="添加到组，并授权"></a>添加到组，并授权</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo usermod -a -G adm,dialout,cdrom,sudo,audio,video,plugdev,games,<span class="built_in">users</span>,input,netdev,gpio,i2c,spi anran</span><br></pre></td></tr></table></figure>
 
 <p>尝试以下措施来检查您的权限是否到位</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo su - anran</span><br></pre></td></tr></table></figure>
@@ -261,9 +261,9 @@
 
 
 <h3 id="提高ssh安全性"><a href="#提高ssh安全性" class="headerlink" title="提高ssh安全性"></a>提高ssh安全性</h3><blockquote>
-<p>SSH 是远程访问树莓派的常见方式。默认情况下，登录 SSH 需要用户名/密码。更安全的方法是使用基于密钥的身份验证。</p>
+<p>SSH 是远程访问树莓派的常见方式。默认情况下，登录 SSH 需要用户名&#x2F;密码。更安全的方法是使用基于密钥的身份验证。</p>
 </blockquote>
-<h4 id="改进用户名-密码安全性"><a href="#改进用户名-密码安全性" class="headerlink" title="改进用户名/密码安全性"></a>改进用户名/密码安全性</h4><p>上文有提及。这里不赘述。</p>
+<h4 id="改进用户名-x2F-密码安全性"><a href="#改进用户名-x2F-密码安全性" class="headerlink" title="改进用户名&#x2F;密码安全性"></a>改进用户名&#x2F;密码安全性</h4><p>上文有提及。这里不赘述。</p>
 <h4 id="更改配置来允许或拒绝特定用户"><a href="#更改配置来允许或拒绝特定用户" class="headerlink" title="更改配置来允许或拒绝特定用户"></a>更改配置<strong>来允许</strong>或<strong>拒绝</strong>特定用户</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano /etc/ssh/sshd_config</span><br></pre></td></tr></table></figure>
 
 
@@ -271,7 +271,7 @@
 <p>这里提供windows下，ssh远程登陆的方法</p>
 <ol>
 <li><p>检查用来连接树莓派的计算机上是否已经有密钥</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dir ~/.ssh</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">dir</span> ~/.ssh</span><br></pre></td></tr></table></figure>
 
 <p>如果存在，则会返回<code>id_rsa  id_rsa.pub  known_hosts</code>类似信息，可以跳到第三步。</p>
 </li>

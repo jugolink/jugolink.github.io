@@ -44,7 +44,7 @@
     
 
 
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 <body>
     <script>
@@ -233,13 +233,15 @@
 <h3 id="首先"><a href="#首先" class="headerlink" title="首先"></a>首先</h3><p>当然，你得有个云服务器才有后边的话，并且这里假设你已经在本地搭建好了博客，并且运行正常，基于这些条件，谈推送才有意义。</p>
 <h3 id="服务端配置"><a href="#服务端配置" class="headerlink" title="服务端配置"></a>服务端配置</h3><p>云服务器安装的是centos，并且已经安装好了宝塔面板，有了宝塔面板管理和部署都会变得容易很多，以下内容假设你已经熟悉使用宝塔面板，如果还不熟悉，那就去熟悉吧。如果你不知道如何安装宝塔面板，可以看这里：<a target="_blank" rel="noopener" href="https://www.bt.cn/bbs/thread-19376-1-1.html">传送门</a></p>
 <ol>
-<li><p>登陆宝塔面板，网站栏目点击<code>添加站点</code>，填好域名，不需要ftp/数据库，php版本选纯静态，创建站点。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">示例：</span><br><span class="line">域名：</span><br><span class="line">xiaoqiang.com</span><br><span class="line">www.xiaoqiang.com</span><br></pre></td></tr></table></figure></li>
-<li><p>从面板的文件栏目，找到/www/wwwroot/xiaoqiang.com，进入文件夹，删除里边初始化的几个文件。</p>
+<li><p>登陆宝塔面板，网站栏目点击<code>添加站点</code>，填好域名，不需要ftp&#x2F;数据库，php版本选纯静态，创建站点。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">示例：</span><br><span class="line">域名：</span><br><span class="line">xiaoqiang.com</span><br><span class="line">www.xiaoqiang.com</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>从面板的文件栏目，找到&#x2F;www&#x2F;wwwroot&#x2F;xiaoqiang.com，进入文件夹，删除里边初始化的几个文件。</p>
 </li>
 <li><p>创建git仓库</p>
 <p>路径随意，好记就行。这里演示：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir /home/git/repos</span><br><span class="line"><span class="built_in">cd</span> /home/git/repos</span><br><span class="line">git init --bare xiaoqiang.git</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> /home/git/repos</span><br><span class="line"><span class="built_in">cd</span> /home/git/repos</span><br><span class="line">git init --bare xiaoqiang.git</span><br></pre></td></tr></table></figure>
+</li>
 <li><p>找到<code>/home/git/repos/taiblog.git/hooks/post-update.sample</code>，将<strong>post-update.sample</strong>文件名改为<strong>post-update</strong>，没错，就这样改。然后鼠标右键点击这个文件，修改权限，默认就好，以确认此文件拥有可执行权限。</p>
 </li>
 <li><p>配置钩子实现自动部署，打开post-update文件，原内容注释，，新增</p>
@@ -247,9 +249,11 @@
 </ol>
 <h3 id="本地配置"><a href="#本地配置" class="headerlink" title="本地配置"></a>本地配置</h3><ol>
 <li><p>博客的deploy需要安装插件。在终端文件路径切到博客所在的路径，运行</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+</li>
 <li><p>编辑器打开<code>_config.yml</code>文件，找到<strong>deplop</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#如果你的服务器ssh端口是默认的「22」，就要参考如下修改</span></span><br><span class="line"><span class="built_in">type</span>: git</span><br><span class="line">repo: mahuateng@服务器公网ip:/home/git/repos/xiaoqiang.git</span><br><span class="line">branch: master</span><br><span class="line"><span class="comment">#如果修改过端口，参考如下</span></span><br><span class="line"><span class="built_in">type</span>: git</span><br><span class="line">repo: ssh://mahuateng@服务器公网ip:你修改的ssh端口/home/git/repos/xiaoqiang.git</span><br><span class="line">branch: master</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#如果你的服务器ssh端口是默认的「22」，就要参考如下修改</span></span><br><span class="line"><span class="built_in">type</span>: git</span><br><span class="line">repo: mahuateng@服务器公网ip:/home/git/repos/xiaoqiang.git</span><br><span class="line">branch: master</span><br><span class="line"><span class="comment">#如果修改过端口，参考如下</span></span><br><span class="line"><span class="built_in">type</span>: git</span><br><span class="line">repo: ssh://mahuateng@服务器公网ip:你修改的ssh端口/home/git/repos/xiaoqiang.git</span><br><span class="line">branch: master</span><br></pre></td></tr></table></figure>
+</li>
 <li><p>测试推送本地文件到远端</p>
 <p>终端运行</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g -d</span><br></pre></td></tr></table></figure>

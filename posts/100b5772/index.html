@@ -44,7 +44,7 @@
     
 
 
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 <body>
     <script>
@@ -259,7 +259,7 @@
 </tr>
 <tr>
 <td>Disk</td>
-<td>三星MZVLB512HAJQ-000H1 512GB/固态 + WDC WDS500G2B0A-00SM50/512GB固态</td>
+<td>三星MZVLB512HAJQ-000H1 512GB&#x2F;固态 + WDC WDS500G2B0A-00SM50&#x2F;512GB固态</td>
 </tr>
 <tr>
 <td>Wireless</td>
@@ -267,7 +267,7 @@
 </tr>
 <tr>
 <td>Ethernet</td>
-<td>Realtek 8111/8168/8411 PCI Express Gigabit Etherne</td>
+<td>Realtek 8111&#x2F;8168&#x2F;8411 PCI Express Gigabit Etherne</td>
 </tr>
 </tbody></table>
 <h4 id="硬件支持"><a href="#硬件支持" class="headerlink" title="硬件支持"></a>硬件支持</h4><ul>
@@ -329,7 +329,7 @@
 <ul>
 <li><a target="_blank" rel="noopener" href="https://www.balena.io/etcher/">balenaEtecher</a> </li>
 <li><a target="_blank" rel="noopener" href="http://www.diskgenius.cn/">DiskGenius 硬盘分区维护工具</a></li>
-<li><a target="_blank" rel="noopener" href="http://www.smzy.com/smzy/down416541.html">Hasleo EasyUEFI</a> </li>
+<li><a target="_blank" rel="noopener" href="http://www.smzy.com/smzy/down416541.html">Hasleo EasyUEFI</a></li>
 </ul>
 </li>
 </ul>
@@ -344,7 +344,7 @@
 <ul>
 <li><p><a target="_blank" rel="noopener" href="https://github.com/hibobmaster/HP-15-dc1010nr-hackintosh">暗影5的成功案例</a>有提醒，要在安装macOS前替换OC文件，否则会出现<code>Stuck on OCB: LoadImage failed - Security Violation</code>的错误。</p>
 </li>
-<li><p>以下基于带Opencore/clover/pe三分区的版本</p>
+<li><p>以下基于带Opencore&#x2F;clover&#x2F;pe三分区的版本</p>
 </li>
 </ul>
 </blockquote>
@@ -371,7 +371,7 @@
 <li>设置完，重启修改BIOS启动项，可以插上U盘直接怼。</li>
 </ol>
 <blockquote>
-<p>Tips: 箭头4需要创建一个ESP分区，分区大小&gt;=300M，可以不要MSR分区，我这里应该搞错了。</p>
+<p>Tips: 箭头4需要创建一个ESP分区，分区大小&gt;&#x3D;300M，可以不要MSR分区，我这里应该搞错了。</p>
 </blockquote>
 <h4 id="设置BIOS及开始安装镜像"><a href="#设置BIOS及开始安装镜像" class="headerlink" title="设置BIOS及开始安装镜像"></a>设置BIOS及开始安装镜像</h4><blockquote>
 <p>基于暗影5的情况，其他机型这里不考虑，开机按F10进BIOS</p>
@@ -412,9 +412,10 @@
 <li><p>重建缓存，参考<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/qSwtuO7K4TqP4hq4yEhG_A">Big Sur安装教程 Part 2</a>里部分内容。</p>
 <ul>
 <li><p>先打开终端，输入几行命令：</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo spctl --master-disable		<span class="comment"># 启用macOS安装应用允许任何来源</span></span><br><span class="line">sudo kextcache -i /				<span class="comment"># 重建缓存</span></span><br></pre></td></tr></table></figure></li>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo spctl --master-disable		<span class="comment"># 启用macOS安装应用允许任何来源</span></span><br><span class="line">sudo kextcache -i /				<span class="comment"># 重建缓存</span></span><br></pre></td></tr></table></figure>
+</li>
 <li><p>如果出于某些原因，在<code>/System/Library/Extensions/</code>或者<code>/Library/Extensions/</code>修改了某些驱动，请使用以下命令重建缓存：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo chown -R root:wheel /System/Library/Extensions/</span><br><span class="line">sudo chmod -R 755 /System/Library/Extensions/</span><br><span class="line">sudo kmutil install --update-all</span><br><span class="line">sudo kcditto</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="built_in">chown</span> -R root:wheel /System/Library/Extensions/</span><br><span class="line">sudo <span class="built_in">chmod</span> -R 755 /System/Library/Extensions/</span><br><span class="line">sudo kmutil install --update-all</span><br><span class="line">sudo kcditto</span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 </ul>

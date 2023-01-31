@@ -44,7 +44,7 @@
     
 
 
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 <body>
     <script>
@@ -240,26 +240,30 @@
 
 
 <h3 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装Node.js</h3><p>hexo官方文档中推荐通过<a target="_blank" rel="noopener" href="https://github.com/jasongin/nvs/blob/master/doc/SETUP.md#mac-linux"><strong>nvs</strong></a>或<strong>nvm</strong>安装<strong>Node.js</strong>，以避免可能遇到的权限问题。这里介绍通过<strong>nvs</strong>安装<strong>Node.js</strong>。</p>
-<h4 id="安装nvs"><a href="#安装nvs" class="headerlink" title="安装nvs"></a>安装nvs</h4><p>Mac/Linux，打开终端，分别运行以下命令</p>
+<h4 id="安装nvs"><a href="#安装nvs" class="headerlink" title="安装nvs"></a>安装nvs</h4><p>Mac&#x2F;Linux，打开终端，分别运行以下命令</p>
 <ol>
 <li><p>指定安装路径</p>
 <ul>
 <li><p>对于当前用户安装(推荐) :</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> NVS_HOME=<span class="string">&quot;<span class="variable">$HOME</span>/.nvs&quot;</span></span><br></pre></td></tr></table></figure></li>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> NVS_HOME=<span class="string">&quot;<span class="variable">$HOME</span>/.nvs&quot;</span></span><br></pre></td></tr></table></figure>
+</li>
 <li><p><del>或者对于系统安装</del>:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> NVS_HOME=<span class="string">&quot;/usr/local/nvs&quot;</span></span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 <li><p>Clone</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/jasongin/nvs <span class="string">&quot;<span class="variable">$NVS_HOME</span>&quot;</span></span><br></pre></td></tr></table></figure></li>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/jasongin/nvs <span class="string">&quot;<span class="variable">$NVS_HOME</span>&quot;</span></span><br></pre></td></tr></table></figure>
+</li>
 <li><p>安装</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">. <span class="string">&quot;<span class="variable">$NVS_HOME</span>/nvs.sh&quot;</span> install</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">. <span class="string">&quot;<span class="variable">$NVS_HOME</span>/nvs.sh&quot;</span> install</span><br></pre></td></tr></table></figure>
+</li>
 <li><p>配置镜像地址</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nvs remote node https://npm.taobao.org/mirrors/node/</span><br><span class="line">nvs remote</span><br></pre></td></tr></table></figure></li>
 </ol>
 <h4 id="安装Node-js-1"><a href="#安装Node-js-1" class="headerlink" title="安装Node.js"></a>安装Node.js</h4><ul>
 <li><p>安装最新的LTS版本</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvs add lts</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvs add lts</span><br></pre></td></tr></table></figure>
+</li>
 <li><p>安装最新版本的node</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvs add latest</span><br></pre></td></tr></table></figure></li>
 </ul>
@@ -272,7 +276,7 @@
 <p>这是我运行这条命令回复的内容:<code>PATH += ~/.nvs/node/16.13.0/x64/bin</code> 。</p>
 </li>
 <li><p>或将其永久添加到 PATH：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvs link lts</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvs <span class="built_in">link</span> lts</span><br></pre></td></tr></table></figure>
 
 <p>这是我运行这条命令回复的内容:<code>~/.nvs/default -&gt; ~/.nvs/node/16.13.0/x64</code></p>
 </li>
@@ -305,7 +309,7 @@
 
 <h3 id="文章链接"><a href="#文章链接" class="headerlink" title="文章链接"></a>文章链接</h3><h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/63403762">科普文：使用 nvs 管理本地 Node.js 版本 - 知乎 (zhihu.com)</a></p>
 <p><a target="_blank" rel="noopener" href="https://nodejs.org/en/download/package-manager/#nvs">Installing Node.js via package manager | Node.js (nodejs.org)</a></p>
-<p><a target="_blank" rel="noopener" href="https://github.com/jasongin/nvs/blob/master/doc/SETUP.md">nvs/SETUP.md at master · jasongin/nvs · GitHub</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/jasongin/nvs/blob/master/doc/SETUP.md">nvs&#x2F;SETUP.md at master · jasongin&#x2F;nvs · GitHub</a></p>
 <p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/index.html">文档 | Hexo</a></p>
 
         </div>

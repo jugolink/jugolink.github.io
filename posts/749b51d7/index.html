@@ -44,7 +44,7 @@
     
 
 
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 <body>
     <script>
@@ -263,7 +263,7 @@
 <h6 id="授权ssh远程登陆root权限"><a href="#授权ssh远程登陆root权限" class="headerlink" title="授权ssh远程登陆root权限"></a>授权ssh远程登陆root权限</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano /etc/ssh/sshd_config //编辑sshd_config文件</span><br></pre></td></tr></table></figure>
 
 <p>将其中PermitRootLogin对应行，改为</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PermitRootLogin yes</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PermitRootLogin <span class="built_in">yes</span></span><br></pre></td></tr></table></figure>
 
 <p>Ctrl + O 保存， 回车（确认文件名），Ctrl + X退出编辑</p>
 <h6 id="重启ssh："><a href="#重启ssh：" class="headerlink" title="重启ssh："></a>重启ssh：</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl restart ssh</span><br></pre></td></tr></table></figure>
@@ -289,7 +289,8 @@
 <p><img src="https://pic.imgdb.cn/item/612f020944eaada739424604.png" alt="raspi-config"></p>
 <ol>
 <li><p>进入raspi-config界面</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">raspi-config</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">raspi-config</span><br></pre></td></tr></table></figure>
+</li>
 <li><p>修改Localisation Options中wireless country项，设置成China，接着修改TimeZone。</p>
 </li>
 <li><p>修改完成后，按Esc返回上一级菜单，有需要的话，可以扩展文件系统到整个SD磁盘空间，不需要的跳过下面步骤。</p>

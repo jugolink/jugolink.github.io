@@ -44,7 +44,7 @@
     
 
 
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 6.3.0"></head>
 
 <body>
     <script>
@@ -218,9 +218,9 @@
                     <span class="tag">
                         
                             
-                                <a href="/tags/SSH/"># SSH</a>
-                            
                                 <a href="/tags/WIFI%E8%AE%BE%E7%BD%AE/"># WIFI设置</a>
+                            
+                                <a href="/tags/SSH/"># SSH</a>
                             
                         
                     </span>
@@ -244,7 +244,7 @@
 <li><p>命令行输入</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo raspi-config</span><br></pre></td></tr></table></figure>
 
-<p>出于监管目的，需要指定设备的使用国。从菜单中选择<strong>本地化选项</strong>项目，然后<strong>从更改无线国家选项</strong>中选择” 更改无线国家/地区选项。按ESC返回到命令行。</p>
+<p>出于监管目的，需要指定设备的使用国。从菜单中选择<strong>本地化选项</strong>项目，然后<strong>从更改无线国家选项</strong>中选择” 更改无线国家&#x2F;地区选项。按ESC返回到命令行。</p>
 </li>
 <li><p>输入</p>
  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wpa_passphrase <span class="string">&quot;wifi名称&quot;</span> <span class="string">&quot;wifi密码&quot;</span></span><br></pre></td></tr></table></figure>
@@ -265,7 +265,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rootsudo suwpa_passphrase <span class="string">&quot;wifi名称&quot;</span> &gt;&gt; /etc/wpa_supplicant/wpa_supplicant.conf</span><br></pre></td></tr></table></figure>
 
 <p>或</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wpa_passphrase <span class="string">&quot;wifi名称&quot;</span> | sudo tee -a /etc/wpa_supplicant/wpa_supplicant.conf &gt; /dev/null/dev/nulltee</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wpa_passphrase <span class="string">&quot;wifi名称&quot;</span> | sudo <span class="built_in">tee</span> -a /etc/wpa_supplicant/wpa_supplicant.conf &gt; /dev/null/dev/nulltee</span><br></pre></td></tr></table></figure>
 
 
 
@@ -310,9 +310,9 @@
                 <span class="tag">
                     
                         
-                            <a href="/tags/SSH/"># SSH</a>
-                        
                             <a href="/tags/WIFI%E8%AE%BE%E7%BD%AE/"># WIFI设置</a>
+                        
+                            <a href="/tags/SSH/"># SSH</a>
                         
                     
                 </span>
